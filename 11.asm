@@ -17,8 +17,8 @@ start:
 
     ;put into readStr the numbers separated by ','
     mov AH, 0Ah
-	mov DX, offset maxSize
-	int 21h
+	  mov DX, offset maxSize
+	  int 21h
 
     ;put readStr into DS:SI
     mov AX, seg readStr

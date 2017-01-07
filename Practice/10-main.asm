@@ -20,8 +20,8 @@ start:
     ; the length of the readed string is in readLength
     ; the string is in readStr
     mov ah, 0ah
-	mov dx, offset maxNumberSize
-	int 21h
+	  mov dx, offset maxNumberSize
+	  int 21h
 
     ;PUT THE readLength value into CX
     mov CL, readLength

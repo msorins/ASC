@@ -1,0 +1,94 @@
+<html>
+<head><title>8086 Interrupts</title></head>
+<body>
+<h2>8086 Interrupts</h2>
+<br/>
+
+An interrupt is an electrical signal sent by the computing system which signalizes the occurrence
+of "an unusual event".
+<br/><br/>
+
+<p> 
+There can be maximum 256 interrupts. Each interrupt has an associated procedure called Interrupt Handling Routine (IHR)
+which is executed when that specific interrupt occurs. Not all 256 possible interrupts are defined.
+</p>
+ 
+<p>
+When an interrupt is detected, the CPU does the following:
+<ul>
+    <li>suspend the execution of the current program</li>
+    <li>calls the Interrupt Handling Routine for that interrupt</li>
+    <li>resumes the execution of the suspended program (in most cases)</li>
+</ul>
+The handling of an interrupt is done only in between 2 consecutive machine instructions.
+</p>
+ 
+<p>
+Depending on the causes that generate them, interrupts are classified in :
+<ol>
+	<li>interrupts external to the CPU: key pressed, completion of an input/output operation</li>
+	<li>interrupts internal to the CPU: division by zero, trying to access a memory area which does not exist, trying to execute an instruction with no operation code</li>
+</ol>
+
+Depending on the level on which interrupts are defined, they can be grouped in: 
+<ol>
+	<li>hardware interrupts. The IHRs are written by the hardware circuits manufacturers and are stored in the memory of these hardware circuits.<br/>
+            Ex:<ul>
+            <li>interrupt 00h - is generated after a division by 0</li>
+	    <li>interrupt 01h - is generated after each machine instruction if TF=1 (TrapFlag). This interrupt is used by debuggers like the Turbo Debuger.</li>
+	    <li>interrupt 08h - the time interrupt. It is generated once in 55 milliseconds. </li>
+	    </ul>
+	</li> 
+
+	<li>BIOS interrupts. The IHRs of these interrupts are written by the BIOS chipset manufacturers.<br/>
+            Ex:<ul>
+	    <li>interrupt 10h - supports working with the screen in graphic or text mode</li>
+	    <li>interrupt 11h - provides information on the external devices installed on the system</li>
+	    <li>interrupt 12h - provides information on the size of the RAM memory</li>
+	    <li>interrupt 13h - supports working with the hard-disk</li>
+	    </ul>
+	</li> 	
+	<li>DOS interrupts. The IHRs of these interrupts are written by the Operating System designers.<br/>
+            Ex:<ul>
+	    <li>interrupt 20h - ends a program.</li>
+	    <li>interrupt 21h - provides the DOS system functions</li>
+	    <li>interrupt 33h - working with the mouse</li>
+	    </ul>
+ 	</li>
+	<li>user-defined interrupts.</li>
+</ol>
+ 
+<p>
+The routines of some soft interrupts can handle the interrupt differently for different values 
+placed in the AH register. In these cases, we say that the interrupt provides several functions.
+</p>
+ 
+<p>
+Example 1:
+Using function 02h of the interrupt 21h we can display a character on the screen. The IHR of this
+interrupt expects in AH the function code (02h) and in DL the ASCII code of the character
+to be printed on the screen.
+<br/><br/>
+
+mov ah, 02h <br/>
+mov dl, 'A' <br/>
+int 21h  ; the instruction 'int' makes the CPU generate interrupt 21h<br/>
+<br/>
+The effect of these instructions is that the 'A' character is displayed on the screen.
+
+ 
+
+<p><b>Observations:</b>
+<ul>
+    <li>The complete list of all interrupts and functions is found in the Norton Guide. It is advised that every student reads this
+list (just reading, not memorizing it). The student does not need to know the interrupts by heart, but he/she must be able to
+search efficiently in the Norton Guide for an interrupt which provides a specific thing.</li>
+    <li>Some interrupts are "reserved". These are interrupts for which the computing system designers did not make available any
+specifications either because these interrupts can lead to unpredictable behavior or their specification can change from 
+one version of the system to the other. Students should avoid using this kind of interrupts.</li>
+    <li>Some interrupts might not work as expected in the Windows operating environment.</li>
+</ul>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<html> 
+<head>
+<title>COMPUTER SYSTEMS ARCHITECTURE</title>
+<style>
+* {
+  /* Standard Reset, and we're adding box-sizing:border-box because it's awesome. */
+  
+  margin: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-transition: all 0s ease-in-out;
+  -moz-transition: all 0s ease-in-out;
+  -o-transition: all 0s ease-in-out;
+  transition: all 0s ease-in-out;
+}
+.content-box {
+  width: 100%;
+  height: 80px;
+  max-width:80%;
+  position: relative;
+}
+
+#ribbon-container {
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  overflow: visible;
+  /* so we can see the pseudo-elements we're going to add to the anchor */
+  
+  font-size: 18px;
+  /* font-size and line-height must be equal so we can account for the height of the banner */
+  
+  line-height: 10px;
+}
+
+
+#ribbon-container:before {
+  content: "";
+  height: 0;
+  width: 0;
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  border-top: 29px solid rgba(0, 0, 0, .3);
+  /* These 4 border properties create the first part of our drop-shadow */
+  
+  border-bottom: 29px solid rgba(0, 0, 0, .3);
+  border-right: 29px solid rgba(0, 0, 0, .3);
+  border-left: 29px solid transparent;
+}
+
+#ribbon-container:after {
+  /* This adds the second part of our dropshadow */
+  
+  content: "";
+  height: 3px;
+  background: rgba(0, 0, 0, .3);
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 58px;
+  right: 3px;
+}
+
+#ribbon-container a {
+  display: block;
+  padding: 20px;
+  position: relative;
+  /* allows us to position our pseudo-elements properly */
+  
+  background: #0089d0;
+  overflow: visible;
+  height: 58px;
+  margin-left: 29px;
+  color: #fff;
+  text-decoration: none;
+}
+
+#ribbon-container a:after {
+  /* this creates the "folded" part of our ribbon */
+  
+  content: "";
+  height: 0;
+  width: 0;
+  display: block;
+  position: absolute;
+  bottom: -15px;
+  right: 0;
+  border-top: 15px solid #004a70;
+  border-right: 15px solid transparent;
+}
+
+#ribbon-container a:before {
+  /* this creates the "forked" part of our ribbon */
+  
+  content: "";
+  height: 0;
+  width: 0;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -29px;
+  border-top: 29px solid #0089d0;
+  border-bottom: 29px solid #0089d0;
+  border-right: 29px solid transparent;
+  border-left: 29px solid transparent;
+}
+
+#ribbon-container a:hover {
+  background: #009ff1;
+}
+
+#ribbon-container a:hover:before {
+  /* this makes sure that the "forked" part of the ribbon changes color with the anchor on :hover */
+  
+  border-top: 29px solid #009ff1;
+  border-bottom: 29px solid #009ff1;
+}
+.nice_list{list-style-type:none;}
+.nice_list li{counter-increment: step-counter;margin-bottom: 10px;}
+.nice_list li::before {content: counter(step-counter);margin-right: 5px;font-size: 80%;background-color: rgb(0,200,200);color: white;font-weight: bold;padding: 3px 8px;border-radius: 3px;}
+a{color:#1f4976;text-decoration:none;font-weight:bold;}
+a:hover{color:rgb(0,200,200);}
+.content{width:80%;margin:0 auto;}
+th{background:rgb(0,200,200);}
+table{width:100%;test-align:center;}
+table iframe{width:80%;margin:0 10%;}
+h2{color:rgb(0,200,200);text-align:center;}
+.important{background:#efefef;padding:10px; margin:10px;text-align:center;font-style:italic;}
+</style>
+</head>
+<body>
+
+<div style="width: 70%;margin:10px auto;">
+<br>
+<h2>PROGRAMAREA SESIUNII ARHITECTURA  SISTEMELOR  DE  CALCUL SECTIA INFORMATICA ENGLEZA</h2>
+<br>
+<ul class="nice_list">
+	<li>
+		JOI, <strong>26.01.2017</strong> - ora 14, sala 2/I - grupa 913, 914 + cine doreste sa vina din grupa 917 (data secundara)
+	</li>
+	<li>
+		SAMBATA, <strong>28.01.2017</strong> - ora 14, sala 2/I - cine doreste sa vina din grupele 913, 914 (data secundara)
+	</li>
+	<li>
+		MARTI, <strong>31.01.2017</strong> - ora 14, salile 2/I + 6/II  - grupele 911, 912, 915, 916, 917
+	</li>
+	<li>
+		LUNI, <strong>06.02.2017</strong> - ora 14, sala 6/II - cine doreste sa vina din grupele 911, 912, 915, 916 (data secundara)
+	</li>
+</ul>
+<br>
+<div class="important">
+<p>
+Studentii restantieri din anii trecuti pot sa îsi aleaga individual oricare dintre datele de mai sus pentru prezentarea la examenul scris, cu conditia anuntarii în scris prin mail a acestei intentii CU CEL PUTIN 48h INAINTE, la adresa: <strong>asc@cs.ubbcluj.ro</strong>.
+</p> 
+ <p>
+De asemenea, studentul care doreste a se prezenta la examen în cadrul datei secundare oferite pentru grupa sa are aceeasi obligatie de a anunta în scris prin mail aceasta intentie CU CEL PUTIN 48h INAINTE, la adresa: <strong>asc@cs.ubbcluj.ro</strong>.
+</p>
+</div>
+</body>

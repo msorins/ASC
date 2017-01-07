@@ -1,0 +1,53 @@
+<html>
+
+<head>
+
+<title>Laboratory 9</title>
+</head>
+
+
+<body>
+<strong>Laboratory 9 - multi-module programming (asm+asm)</strong><br><br>
+
+<strong>Assembly language subprograms</strong><br><br>
+
+Assembly language does not have the notion of <em>subprogram</em>. But we can create a sequence of instructions that can be called from other areas of the programs and after it is done to return the control to the program who made the call.<br><br>
+
+The call of a "subprogram" can be done with a <em>jmp</em> instruction. The problem is that the processor does not know where to return when the subprogram is over. Therefore we have to save the return address when we call a subprogram, and the return from the subprogram will actually be a jump to the return address.<br><br>
+
+The place where the return address is saved is the "execution stack". We need the stack because a subprogram could call another subprogram and so on.<br><br>
+
+There are two instructions for this: <em>call</em> and <em>ret</em>.<br><br>
+
+<em>call</em> instruction has the syntax:<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>call label</em><br><br>
+
+which is actually a <em>jmp</em> instruction which also puts on the stack the return address (the address of the instruction that follows the <em>call</em> instruction, not the jump destintation).<br><br>
+
+<em>ret</em> instruction takes the return address from the stack and makes a jump to that address. The instruction does not have any arguments because the address it has to jump to is taken from the stack.<br><br>
+
+The subprograms do not have local varianbles or labels. All names are visible within the entire programs, therefore no duplicate labels should exist.<br><br><br>
+
+<strong>Multi-module programming</strong><br><br>
+
+An assembly language program can be divided into several source files. In order to write a program in several source files, the following requirements should be fulfilled:
+
+<ul>
+<li>All segments should be declared as <em>public</em>, so that in the final program the code segment is built by concatenating the code segment of each module; the same for the data segment.</li>
+<li>All data and code labels from a module that should be visible in other modules too, should be declared as <em>public</em></li>
+<li>Data and code labels declared inside a module and used within other modules should be imported using the <em>extrn</em> directive</li>
+<li>A variable should be entirely defined inside a module (it can not be half defined in a module and half defined in another module). Also, moving the execution from one file to another can exclusively be done using jump instructions (<em>jmp</em>, <em>call</em> or <em>ret</em>).</li>
+<li>Only the module containing the "main program" has an entry point</li>
+</ul>
+
+Each module should be assembled separately (using <em>tasm</em>), and the modules will be afterwards linked together using:<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>tlink /v module_1 module_2 ... module_n</em><br><br>
+
+the resulting executable file having the name of the first module.<br><br>
+
+
+</body>
+
+</html>

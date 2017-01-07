@@ -1,0 +1,73 @@
+<html>
+<head><title>8086 Interrupts problems</title></head>
+<body>
+
+<h2>8086 Interrupts problems</h2>
+ 
+<p>
+1. A string of bytes is given in the data segment. Print on the standard output (screen) the elements
+of this string in base 2.
+</p>
+<p> 
+2. Read a character from the keyboard without echo. If the character is a digit, print it on the screen.
+If the character is '$', end the current program. In any other situation, the character is added to a buffer (i.e. a string)
+which will be printed on the screen when the program exits.
+</p>
+<p>
+3. Read a drive letter (e.g. 'C', 'D', 'Z'..) from the keyboard (let's call it X). If the current drive is the drive
+letter read from the keyboard, set the default drive to X:. Otherwise make the current drive to be X:. Every error
+will be signalized to the user.
+</p>
+<p>
+4. Print the current date on the screen and also the current day of the week (using letters, not numbers).
+</p>
+<p>
+5. Print the current system time on the screen using the hh:mm format and also specify whether it is 'AM' or 'PM'.
+</p>
+<p>
+6. Implement an authentication program. The program has the string 'password' defined in its data segment.
+The program repeatedly asks the user to input the password at the keyboard and verifies if the password 
+given by the user is identical with the string 'password' from the data segment and prints a suitable message on the screen.
+The program exits when the user guessed the password. 
+</p>
+<p>
+7. Write a program which reads the name of a file from the keyboard and then it prints on the screen
+the even lines from this file. 
+</p>
+<p>
+8. Write a program which reads the name of a file and two characters from the keyboard. The program
+should replace all occurrences of the first character in that file with the second character given
+by the user.
+</p>
+<p>
+9. Print the name and content of the current directory (the name of all files and subdirectories). 
+</p>
+<p>
+10. Print on the screen the attributes of a file whose name is given at the keyboard (Useful DOS commands: attrib).
+</p>
+<p>
+11. Set the attributes of a file whose name will be read from the keyboard. The new attributes will be determined
+through a dialog with the user (Useful DOS commands: attrib).
+</p>
+<p>
+12. Read from standard input (keyboard) two file names. Copy the content of the first file in the second file.
+All possible errors are shown to the user.
+</p>
+<p>
+13. Read from standard input (keyboard) the name of a file and the name of a directory. Print a suitable message
+if that file exists or does not exist in the specified directory.
+</p>
+<p>
+14. Read a word and the name of a file from the keyboard. Print a suitable message on the screen if the word
+exists or does not exist in the given file.
+</p>
+<p>
+15. Read from the standard input (keyboard) two directory names, dir1 and dir2. Create the new directory dir1\dir2.
+</p>
+<p>
+16. Read from the standard input (keyboard) the name of a file. Verify whether the size of the file is a multiple of 13
+and if it is not, add zero bytes to the file so that the size of the file becomes a multiple of 13.  
+</p>
+ 
+</body>
+</html>
